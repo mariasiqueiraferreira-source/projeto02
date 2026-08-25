@@ -5,62 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABBA's story</title>
     <style>
-     header{
-
-        background-color: #E7F0F4;
-        border-radius: 15px;
-        padding: 16px;
-        color: rgb(2, 85, 110);
-        text-align: center;
-        max-width: 800px;
-        margin: 0% auto;
-
-     }
-     main{
-
-        background-color: #ffff;
-        color: rgb(2, 85, 110);
-        padding: 15px;
-        max-width: 800px;
-        margin: 0% auto;
-        display: flex;
-     }
-     img{
-
-        width: 150px;
-        height: 150px;
-
-     }
-     .apresentação{
-        font-weight: bold;
-     }
+        header{
+            background-color: #E7F0F4;
+            border-radius: 15px;
+            padding: 16px;
+            color: rgb(2, 85, 110);
+            text-align: center;
+            max-width: 800px;
+            margin: 0% auto;
+        }
+        main{
+            background-color: #ffff;
+            color: rgb(2, 85, 110);
+            padding: 15px;
+            max-width: 800px;
+            margin: 0% auto;
+            display: flex;
+            flex-direction: column; 
+            gap: 20px;
+        }
+        .conteudo-principal {
+            display: flex;
+            gap: 15px;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            object-fit: cover; 
+            border-radius: 8px;
+        }
+        .apresentação{
+            font-weight: bold;
+        }
+        .historico-grupo {
+            background-color: #F4F8FA;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .midia-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            border: none;
+        }
+        button {
+            background-color: #E7F0F4;
+            border: 1px solid rgb(2, 85, 110);
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: rgb(2, 85, 110);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #d0e2eb;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meu primeiro fanpage</h1>
+        <h1>Minha primeiro fanpage</h1>
         <p>Vou contar a história do inicio e fim do grupo ABBA</p>
     </header>
-
     <main>
-        <img src="imagem-abba.jpg" alt="Imagem dos integrantes do grupo musical ABBA.">
-        
-        <div>
-            <h2>A Revolução Musical</h2>
-            <p class="apresentação">Por: Maria Clara Siqueira Ferreira</p>
-            <p>Bem vindos ao meu fanpage! Aqui você pode conhecer melhor a história deste maravilhoso grupo que revolucionou os anos 70.</p>
-            <button>❤️ <span>0</span></button>
+        <!-- parte inicial com a foto do grupo e a apresentação -->
+        <div class="conteudo-principal">
+            <img src="imagem-abba.jpg" alt="Imagem dos integrantes do grupo musical ABBA.">
+            <div>
+                <h2>A Revolução Musical</h2>
+                <p class="apresentação">Por: Maria Clara Siqueira Ferreira</p>
+                <p>Bem vindos a minha fanpage! Aqui você pode conhecer melhor a história deste maravilhoso grupo que revolucionou os anos 70.</p>
+                <button>❤️ <span>0</span></button>
+            </div>
         </div>
-    
+
+        <!-- Meu texto sobre a história e o fim do grupo -->
+        <div class="historico-grupo">
+            <h3>O Sucesso Absoluto e o Fim</h3>
+            <p>O grupo sueco ABBA estourou mundialmente após vencer o Festival Eurovision em 1974 com a canção "Waterloo". Formado por dois casais, Agnetha, Björn, Benny e Anni-Frid, eles dominaram as paradas de sucesso com hits atemporais como "Dancing Queen" e "Mamma Mia". No entanto, o desgaste dos relacionamentos amorosos e o divórcio dos integrantes levaram ao fim das atividades do grupo no início dos anos 80, deixando um legado inesquecível na música pop.</p>
+        </div>
+
+        <!-- fotos e vídeos extras da rubrica -->
+        <section class="midia-section">
+            <h3>Galeria e Vídeos</h3>
+            
+            <!-- segunda imagem  -->
+            <img src="imagem2-abba.webp" alt="Segunda imagem do grupo ABBA" style="width: 100%; height: auto; max-height: 400px;">
+
+            <!-- link do video do Yt -->
+            <div class="video-container">
+                <iframe src="https://youtu.be/Sj_9CiNkkn4?si=8OxfSfHdPO6Hp2kU" title="musica famosa do abba" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
     </main>
-
-
 </body>
 <script>
     const botao = document.querySelector("button");
     botao.addEventListener("click", botaoClicado);
-
-    function botaoClicado(){
+    function botaoClicado() {
         console.log("fui clicado")
         let texto = botao.querySelector("span")
         texto.textContent++;
